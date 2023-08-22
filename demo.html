@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./img/logo_sinFondo.png"
+      type="image/x-icon"
+      style="border-radius: 50%"
+    />
+    <meta
+      name="viewport"
+      content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width"
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Cultivos 2022/23</title>
+    <script>
+      function clearChart() {
+        chartCGTandilFilter.clear();
+      }
+      window.onload = clearChart;
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./app/leaflet/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="./app/Leaflet.draw-develop/src/leaflet.draw.css"
+    />
+    <link rel="stylesheet" href="./css/easy-button.css" />
+    <link rel="stylesheet" href="./css/sidebar.css" />
+    <link rel="stylesheet" href="./css/Control.MiniMap.css" />
+    <link rel="stylesheet" href="./css/L.Control.Locate.scss" />
+    <link rel="stylesheet" href="./css/leaflet.legend.css" />
+    <link rel="stylesheet" href="./css/L.Control.Bar.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script src="./app/leaflet/leaflet.js"></script>
+    <script src="./js/easy-button.js"></script>
+    <script src="./js/leaflet-rotate-src.js"></script>
+    <script src="./js/jquery-sidebar.js"></script>
+    <script src="./js/Control.MiniMap.js"></script>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <!--<script src="https://cdn.tailwindcss.com"></script>-->
+    <script src="./js/chart.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+      integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/L.Control.Locate.js"></script>
+    <script src="./js/leaflet.legend.js"></script>
+    <script src="./js/L.Control.Bar.js"></script>
+
+    <!--Script Draw Tools-->
+    <script src="./app/Leaflet.draw-develop/src/Leaflet.draw.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/Leaflet.Draw.Event.js"></script>
+
+    <script src="./app/Leaflet.draw-develop/src/Toolbar.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/Tooltip.js"></script>
+
+    <script src="./app/Leaflet.draw-develop/src/ext/GeometryUtil.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/ext/LatLngUtil.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/ext/LineUtil.Intersect.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/ext/Polygon.Intersect.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/ext/Polyline.Intersect.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/ext/TouchEvents.js"></script>
+
+    <script src="./app/Leaflet.draw-develop/src/draw/DrawToolbar.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/draw/handler/Draw.Feature.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/draw/handler/Draw.SimpleShape.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/draw/handler/Draw.Polyline.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/draw/handler/Draw.Marker.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/draw/handler/Draw.Circle.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/draw/handler/Draw.CircleMarker.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/draw/handler/Draw.Polygon.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/draw/handler/Draw.Rectangle.js"></script>
+
+    <script src="./app/Leaflet.draw-develop/src/edit/EditToolbar.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/edit/handler/EditToolbar.Edit.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/edit/handler/EditToolbar.Delete.js"></script>
+
+    <script src="./app/Leaflet.draw-develop/src/Control.Draw.js"></script>
+
+    <script src="./app/Leaflet.draw-develop/src/edit/handler/Edit.Poly.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/edit/handler/Edit.SimpleShape.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/edit/handler/Edit.Rectangle.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/edit/handler/Edit.Marker.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/edit/handler/Edit.CircleMarker.js"></script>
+    <script src="./app/Leaflet.draw-develop/src/edit/handler/Edit.Circle.js"></script>
+
+    <!--Turf Tools-->
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+  </head>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+  <body>
+    <div id="barGraph" style="opacity: 0.8"></div>
+    <div class="container">
+      <div id="map"></div>
+      <div id="layers"></div>
+    </div>
+    <script src="./data/sup_cultivos_gruesa2022_23.js"></script>
+    <script src="./data/dpto_tandil.js"></script>
+    <script src="./app/leaflet/obfsc-demo.js"></script>
+    <script src="./js/filter.js"></script>
+    <script type="text/javascript">
+      document.oncontextmenu = function () {
+        return false;
+      };
+    </script>
+  </body>
+</html>

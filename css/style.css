@@ -1,0 +1,116 @@
+body {
+  font-family: sans-serif;
+}
+#map {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.popup {
+  max-height: 250px;
+  overflow-y: scroll;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  background-color: #fff;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+h6 {
+  text-decoration: underline;
+  font-size: medium;
+}
+
+hr {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  width: 100%;
+}
+span#results hr {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.leaflet-control-rotate-toggle {
+  background-color: #fff;
+}
+
+.btn btn-secondary {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+span.fa.fa-map-marker {
+  font-size: x-large;
+  vertical-align: middle;
+  color: #6c757d;
+}
+
+.leaflet-control-layers.leaflet-control-layers-expanded.leaflet-control {
+  margin-bottom: 30px;
+}
+
+.leaflet-legend-contents {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/*Control Bar BOTTOM*/
+#layers {
+  opacity: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/*Control Bar LEFT*/
+.leaflet-control-bar-left.leaflet-control-bar {
+  height: 100%;
+  width: 20%;
+  min-width: 200px;
+  left: -20%;
+  transition: left 0.5s;
+}
+
+.leaflet-control-bar-left.leaflet-control-bar.visible {
+  left: 0;
+}
+
+.leaflet-control-bar-left.leaflet-control-bar.visible ~ .leaflet-left {
+  left: 20%;
+  transition: left 0.5s;
+}
+
+.leaflet-control-bar-left.leaflet-control-bar ~ .leaflet-left {
+  left: 0;
+  transition: left 0.5s;
+}
+
+.easy-button-button.leaflet-bar-part.leaflet-interactive.Abrir-active,
+.easy-button-button.leaflet-bar-part.leaflet-interactive.Cerrar-active {
+  width: 170px;
+  text-align: left;
+}
+.btn.btn-secondary.btn-sm {
+  margin: 0 0.3em 0 0.3em;
+}
+.btn.btn-secondary.btn-sm.btnActive {
+  background-color: "yellow";
+  color: "black";
+}
+
+@media all and (max-width: 600px) {
+  .popup {
+    max-width: 200px;
+    overflow-x: scroll;
+  }
+}
+
+@media all and (max-height: 400px) {
+  .popup {
+    max-height: 150px;
+  }
+}
